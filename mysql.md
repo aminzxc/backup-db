@@ -10,9 +10,9 @@ SHOW DATABASES;
 ```
 mysqldump -u username -p database_name > backup.sql
 ```
-### if you want to back up multiple databases, you can use the --databases option followed by the database names
+### if you want to back up multiple databases, you can use the `--databases` option followed by the database names
 ```
-mysqldump -u username -p `--databases` database1 database2 > backup.sql
+mysqldump -u username -p --databases database1 database2 > backup.sql
 ```
 ### To back up all databases on the MySQL server, use the `--all-databases` option
 ```
