@@ -24,3 +24,19 @@ mongorestore --drop --gzip --archive=/path/to/backup/backup.gz --authenticationD
 ```
 docker cp mongo-backup:/backup/backup.gz /path/on/host/backup.gz
 ```
+### Backup and restore collection
+```
+mongodump --db=EntityDb --collection=brandModelTypes --out=/path/to/backup/directory
+```
+```
+mongorestore --db=EntityDb --collection=brandModelTypes --dir=/path/to/backup/EntityDb/test.bson
+```
+### Export collection json
+```
+mongoexport --db=EntityDb --collection=brandModelTypes --out=/mnt/test.json
+```
+### delete collection 
+```
+use DBname
+db.collectionName.drop()
+```
