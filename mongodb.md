@@ -54,5 +54,7 @@ rs.initiate({
     { _id: 2, host: "mongo-3:27017" }
   ]
 })
-
+```
+```
+rs.status()
 ```
