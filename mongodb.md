@@ -58,3 +58,26 @@ rs.initiate({
 ```
 rs.status()
 ```
+### Exporting a query in csv format
+```
+mongoexport \
+  --db=YOUR_DB_NAME \
+  --collection=baravards \
+  --type=csv \
+  --query='{ "call_counter": 120 }' \
+  --fields='id,name,root_brand_name,sub_name' \
+  --out=output.csv
+```
+### For nested data
+```
+mongoexport \
+  --db=YOUR_DB_NAME \
+  --collection=brandModelTypes \
+  --type=json \
+  --fields="alias,alias_display,models.alias,models.alias_display,models.types.alias,models.types.alias_display,models._id,models.types._id" \
+  --out=brandModelTypes.json
+```
+```
+convert json to csv
+https://json-csv.com
+```
