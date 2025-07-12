@@ -39,6 +39,8 @@ mongoexport --db=EntityDb --collection=brandModelTypes --out=/mnt/test.json
 ```
 use DBname
 db.collectionName.drop()
+or
+db.getCollection("name-old").drop()
 ```
 ### rename collection
 ```
