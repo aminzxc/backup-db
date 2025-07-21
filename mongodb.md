@@ -84,3 +84,23 @@ convert json to csv
 https://json-csv.com
 https://cloudconvert.com/csv-to-xlsx
 ```
+### connect mongo cluster to compass
+```
+ssh tunnel from window to server
+ssh -L 27021:localhost:27021 -L 27022:localhost:27022 -L 27023:localhost:27023 user@188.121.117.222
+test connect port with powershell
+Test-NetConnection -ComputerName localhost -Port 27023
+
+
+ComputerName     : localhost
+RemoteAddress    : ::1
+RemotePort       : 27023
+InterfaceAlias   : Loopback Pseudo-Interface 1
+SourceAddress    : ::1
+TcpTestSucceeded : True
+
+connect compass
+connect single mongo
+mongodb://localhost:27021/?directConnection=true&tls=false
+```
+
