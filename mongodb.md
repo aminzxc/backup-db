@@ -16,6 +16,11 @@ or
 ```
 mongodump --db database_name --collection collection_name
 ```
+### backup and restore mongo replication
+```
+mongodump  --gzip --oplog --archive=/path/to/backup/backup.gz
+mongorestore --drop --archive dump.archive.gz --gzip --oplogReplay
+```
 ### `Restore` the backup (if needed)
 ```
 mongorestore --drop --gzip --archive=/path/to/backup/backup.gz --authenticationDatabase admin --username backupUser --password backupUserPassword
