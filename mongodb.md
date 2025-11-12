@@ -108,4 +108,18 @@ connect compass
 connect single mongo
 mongodb://localhost:27021/?directConnection=true&tls=false
 ```
+### backup & restore documents from collection
+```
+mongodump \
+--db EntityDb \
+--collection permissions \
+--query '{"permission_code":"ABVGBI"}' \
+--archive=/tmp/perm_abvgbi.archive
+
+
+mongorestore \
+--nsFrom="EntityDb.permissions" \
+--nsTo="EntityDb.permissions" \
+--archive=/tmp/perm_abvgbi.archive
+```
 
